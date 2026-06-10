@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento Logistico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Monitoramento Logistico</h1>
+    </header>
+
+    <!-- Indicadores Principais (Alimentados pelo JS) -->
+    <section class="container-indicadors">
+        <div class="indicador-card">
+            <div class="indicador-titulo">Total Entregas</div>
+            <div class="indicador-valor indicador-azul" id="indicador-total">0</div>
+        </div>
+        <div class="indicador-card">
+            <div class="indicador-titulo">Entregas em Atraso</div>
+            <div class="indicador-valor indicador-vermelho" id="indicador-atrasos">0</div>
+        </div>
+        <div class="indicador-card">
+            <div class="indicador-titulo">Taxa de Atraso</div>
+            <div class="indicador-valor indicador-laranja" id="indicador-taxa">0%</div>
+        </div>
+        <div class="indicador-card">
+            <div class="indicador-titulo">Maior Gargalo</div>
+            <div class="indicador-valor indicador-vermelho" id="indicador-gargalo">+0 dias</div>
+        </div>
+    </section>
+
+ 
+    <section class="container-graficos">
+        <div class="grafico-box">
+            <div class="grafico-titulo">Status de Entrega por Região</div>
+            <div class="mock-grafico-barras" id="grafico-regioes">
+                <!-- ajustado pelo js-->
+            </div>
+        </div>
+
+        <div class="grafico-box">
+            <div class="grafico-titulo">Severidade do Atraso por Parceiro (Média de Dias)</div>
+            <div class="container-barras-horizontais" id="grafico-transportadoras">
+                <!-- ajustado pelo js-->
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container-tabela">
+        <div class="grafico-titulo">Ranking de Priorização (Atrasos Ordenados por Criticidade)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Transportadora</th>
+                    <th>Região</th>
+                    <th>Prazo Original</th>
+                    <th>Dias Reais</th>
+                    <th>Desvio</th>
+                    <th>Nível de Alerta</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-corpo">
+                
+            </tbody>
+        </table>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
